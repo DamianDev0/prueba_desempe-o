@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { container } from "tsyringe";
 import OrderService from "../services/orderServices";
 
+
+//exportamos el controlador cons sus metodos
 export default class OrderController {
     static async getAllOrders(_: Request, res: Response) {
         try {
@@ -115,6 +117,4 @@ export default class OrderController {
             throw new Error('Error fetching orders for user');
         }
     }
-
-
 }

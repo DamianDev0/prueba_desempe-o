@@ -12,12 +12,12 @@ const sequelize: Sequelize = new Sequelize({
 });
 
 // Sincroniza los modelos con la base de datos
-sequelize.sync({ alter: true }) // Usar `alter: true` para ajustar la base de datos al esquema de modelos
-    .then(() => {
-        console.log('Database & tables created or updated!');
-    })
-    .catch((error) => {
-        console.error('Error syncing database:', error);
-    });
+// sequelize.sync({ alter: true }) // Usar `alter: true` para ajustar la base de datos al esquema de modelos
+//     .then(() => {
+//         console.log('Database & tables created or updated!');
+//     })
+//     .catch((error) => {
+//         console.error('Error syncing database:', error);
+//     });
 
 export default sequelize;

@@ -14,10 +14,14 @@ import {
 import {  User } from "./userModel";
 import { ProductCart} from "./productCartModel";
 
+//creamos la tabla carts
+
 @Table({
     tableName: 'cart',
     timestamps: false
 })
+
+//se hace la calse cart que se extiende de modelo
 export class Cart extends Model {
     @PrimaryKey
     @AutoIncrement
@@ -26,14 +30,14 @@ export class Cart extends Model {
     })
     id!: number;
 
-    @ForeignKey(() => User)
+    @ForeignKey(() => User) //nos traemos la foreing key de user
     @Column({
         type: DataType.INTEGER,
         allowNull: false
     })
     userId!: number
 
-    @BelongsTo(() => User)
+    @BelongsTo(() => User) // decimos que pertenece a User
     user!:  User
 
     @HasMany(() => ProductCart)

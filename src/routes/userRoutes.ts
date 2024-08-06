@@ -1,9 +1,11 @@
 import { Router } from "express";
 import UserController from "../controllers/userController";
-import { authenticateJWT } from "../middlewares/authMIddleware";
+import { authenticateJWT } from "../middlewares/authMIddleware"; // utilizamos el middleware para auteticar
 
 
 export const userRouter = Router()
+
+// hacemos unas rutas publicas y otras privadas con JWT 
 
 userRouter.get('/', authenticateJWT,UserController.getAllUser)
 userRouter.get('/:id', authenticateJWT,UserController.getUserById)

@@ -13,9 +13,10 @@ app.use(express.json());
 // Routes
 app.use('/api', router);
 
+// iniciamos el servidor
 const startServer = async () => {
   try {
-    await sequelize.authenticate();
+    await sequelize.authenticate(); //autenticamos si la conexion se establecio
     console.log("Connected to the database successfully");
     await sequelize.sync();
     app.listen(3000, () => {
@@ -27,4 +28,4 @@ const startServer = async () => {
   }
 };
 
-startServer();
+startServer(); 
